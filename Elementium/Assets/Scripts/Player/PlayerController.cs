@@ -8,7 +8,8 @@ public class PlayerController : NetworkBehaviour {
 	// Aggregate all components for updating
 	//PlayerCombat playerCombat;
 	PlayerMovement playerMovement;
-	//PlayerVitals playerVitals;
+    //PlayerVitals playerVitals;
+    PlayerElementController playerElement;
 
 	void Start () {
 		// Tag the local player to avoid self-collisions
@@ -18,7 +19,8 @@ public class PlayerController : NetworkBehaviour {
 
 		//playerCombat = GetComponent<PlayerCombat>();
 		playerMovement = GetComponent<PlayerMovement>();
-		//playerVitals = GetComponent<PlayerVitals>();
+        //playerVitals = GetComponent<PlayerVitals>();
+        playerElement = GetComponent<PlayerElementController>();
 
 	}
 	
@@ -29,6 +31,7 @@ public class PlayerController : NetworkBehaviour {
 		}
 		//playerCombat.UpdateMe();
 		playerMovement.UpdateMe();
-		//playerVitals.UpdateMe();
+        //playerVitals.UpdateMe();
+        playerElement.UpdateMe();
 	}
 }
