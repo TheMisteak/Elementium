@@ -26,6 +26,8 @@ public class PlayerElementController : MonoBehaviour {
             // Shield Wall
             earthShield.Execute(playerLowerSpawn);
         }
+
+
     }
 
 }

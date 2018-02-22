@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4798511382342046}
   m_Layer: 0
-  m_Name: UnderPlayerTransform
+  m_Name: FrontBelowPlayerTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -292,6 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerLowerSpawn: {fileID: 4798511382342046}
+  playerBelowSpawn: {fileID: 0}
   objectPooler: {fileID: 114227471311990508}
 --- !u!114 &114819487565929484
 MonoBehaviour:
