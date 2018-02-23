@@ -32,24 +32,6 @@ public class EarthShieldWall : MonoBehaviour, IPooledObject {
         {
             Move();
         }
-
-        /*
-        if (transform.position != endPosition)
-        {
-            OnObjectSpawn();
-        }
-        */
-
-        /*
-        if (t < 1)
-        {
-            OnObjectSpawn();
-        }
-        else if (t >= 1)
-        {
-            t = 0;
-        }
-        */
     }
 
     public void Move()
@@ -57,15 +39,5 @@ public class EarthShieldWall : MonoBehaviour, IPooledObject {
         float currentDuration = Time.time - startTime;
         float journeyFraction = currentDuration / totalDistanceToDestination;
         transform.position = Vector3.Lerp(startPosition, endPosition, journeyFraction * speed);
-
-        //endPosition = new Vector3(transform.position.x, transform.position.y + 4.5f, transform.position.y);
-        //transform.position = Vector3.MoveTowards(transform.position, endPosition, speed * Time.deltaTime);
-
-        /*
-        Vector3 endPosition = new Vector3(transform.position.x, transform.position.y + 4.5f, transform.position.z);
-
-        transform.position = Vector3.Lerp()
-        t += 0.5f * Time.deltaTime;
-        */
     }
 }

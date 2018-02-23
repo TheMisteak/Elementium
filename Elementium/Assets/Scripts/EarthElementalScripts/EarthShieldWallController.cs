@@ -13,9 +13,9 @@ public class EarthShieldWallController : MonoBehaviour {
         objectPooler = op;
     }
 
-    public void Execute(Transform spawnPoint)
+    public void Execute(GameObject spawnPoint)
     {
-        objectPooler.SpawnFromPool("EarthShieldWall", spawnPoint.position, spawnPoint.rotation);
+        objectPooler.SpawnFromPool("EarthShieldWall", spawnPoint.transform.position, spawnPoint.transform.rotation);
     }
 
 }
