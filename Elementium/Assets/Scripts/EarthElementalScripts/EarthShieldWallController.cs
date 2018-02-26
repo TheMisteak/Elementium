@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class EarthShieldWallController : MonoBehaviour {
 
-    private GameObject player;
     private ObjectPooler objectPooler;
 
-    public EarthShieldWallController(GameObject p, ObjectPooler op)
+    public EarthShieldWallController(ObjectPooler op)
     {
-        player = p;
         objectPooler = op;
     }
 
@@ -17,5 +15,4 @@ public class EarthShieldWallController : MonoBehaviour {
     {
         objectPooler.SpawnFromPool("EarthShieldWall", spawnPoint.transform.position, spawnPoint.transform.rotation);
     }
-
 }

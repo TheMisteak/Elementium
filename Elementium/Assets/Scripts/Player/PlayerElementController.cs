@@ -19,7 +19,7 @@ public class PlayerElementController : MonoBehaviour {
     {
         //playerLowerSpawn = gameObject.transform.GetChild(1).transform;  // getting UnderPlayerTransform child's transform
 
-        earthShield = new EarthShieldWallController(gameObject, objectPooler);
+        earthShield = new EarthShieldWallController(objectPooler);
     }
 
     private void FixedUpdate()

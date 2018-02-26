@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Networking;
+using UnityEngine.UI;
 using UnityEngine;
 
-public class EarthShieldWall : MonoBehaviour, IPooledObject {
+public class EarthShieldWall : NetworkBehaviour, IPooledObject {
 
     //public float speed;
 
@@ -10,6 +12,11 @@ public class EarthShieldWall : MonoBehaviour, IPooledObject {
     //private Vector3 endPosition;
 
     public float speed;
+    public GameObject healthSliderGameObject;
+    public Slider healthSlider;
+
+    [SyncVar]
+    public float wallHealth = 100f;
 
     private Vector3 startPosition;
     private Vector3 endPosition;
@@ -27,11 +34,36 @@ public class EarthShieldWall : MonoBehaviour, IPooledObject {
 
     // Move the wall
     void Update () {
-        
         if (totalDistanceToDestination != 0)
         {
             Move();
         }
+
+        if (Time.time - startTime > 5)
+        {
+            gameObject.SetActive(false);
+            wallHealth = 100f;
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        // TODO:
+        // check if collision.gameobject is a destructive element attack
+
+        if (wallHealth < 0)
+        {
+            // recycle wall
+            gameObject.SetActive(false);
+            wallHealth = 100f;
+        }
+        else
+        {
+            // wallHealth -= destructive elements attack value
+            wallHealth -= 1f;
+        }
+
+        healthSlider.value = wallHealth;
     }
 
     public void Move()
