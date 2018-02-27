@@ -13,7 +13,8 @@ public class EarthShieldWall : NetworkBehaviour, IPooledObject {
 
     public float speed;
     public GameObject healthSliderGameObject;
-    public Slider healthSlider;
+    public Slider healthSliderSide1;
+    public Slider healthSliderSide2;
 
     [SyncVar]
     public float wallHealth = 100f;
@@ -63,7 +64,8 @@ public class EarthShieldWall : NetworkBehaviour, IPooledObject {
             wallHealth -= 1f;
         }
 
-        healthSlider.value = wallHealth;
+        healthSliderSide1.value = wallHealth;
+        healthSliderSide2.value = wallHealth;
     }
 
     public void Move()

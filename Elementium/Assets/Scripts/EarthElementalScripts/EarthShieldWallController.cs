@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EarthShieldWallController : MonoBehaviour {
+public class EarthShieldWallController {
 
     private ObjectPooler objectPooler;
 
