@@ -31,6 +31,10 @@ public class EarthShieldWall : NetworkBehaviour, IPooledObject {
         startTime = Time.time;
         endPosition = new Vector3(transform.position.x, transform.position.y + 6f, transform.position.z);
         totalDistanceToDestination = Vector3.Distance(transform.position, endPosition);
+
+        wallHealth = 100f;
+        healthSliderSide1.value = wallHealth;
+        healthSliderSide2.value = wallHealth;
     }
 
     // Move the wall
